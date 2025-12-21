@@ -1,0 +1,472 @@
+{% extends "common.html" %}
+{% load static %}
+
+{% block head %}
+<style>
+
+    .about-area2 {
+        padding: 60px 0;
+        background-color: #f9f9f9;
+    }
+
+    .about-img img {
+        width: 100%;
+        border-radius: 10px;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .about-img img:hover {
+        transform: scale(1.05);
+    }
+
+    .about-caption {
+        max-width: 500px;
+    }
+
+    .section-tittle span {
+        font-size: 18px;
+        color: #ff6600;
+        font-weight: bold;
+    }
+
+    .section-tittle h2 {
+        font-size: 32px;
+        font-weight: bold;
+        margin-top: 10px;
+    }
+
+    .pera-top,
+    .pera-bottom {
+        color: #666;
+        line-height: 1.6;
+    }
+
+    .border-btn {
+        display: inline-block;
+        padding: 10px 25px;
+        border: 2px solid #ff6600;
+        color: #ff6600;
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 5px;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .border-btn:hover {
+        background-color: #ff6600;
+        color: white;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .about-area2 .row {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .about-img {
+            margin-bottom: 20px;
+        }
+
+        .about-caption {
+            margin: 0 auto;
+        }
+    }
+
+    /* Scroll Animation */
+    .fade-in {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+
+    .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    .about-unique-section {
+        padding: 60px 0;
+        background-color: #fff3e6; /* Light warm background */
+    }
+
+    .about-unique-section .about-caption {
+        max-width: 500px;
+    }
+
+    .about-unique-section .section-tittle span {
+        font-size: 18px;
+        color: #ff6600;
+        font-weight: bold;
+    }
+
+    .about-unique-section .section-tittle h2 {
+        font-size: 34px;
+        font-weight: bold;
+        margin-top: 10px;
+        color: #333;
+    }
+
+    .about-unique-section p {
+        color: #666;
+        line-height: 1.6;
+    }
+
+    .about-unique-section .single-caption {
+        display: flex;
+        align-items: center;
+        background: #fff;
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: 2px 4px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .about-unique-section .single-caption:hover {
+        transform: scale(1.05);
+        background: #ffe0cc;
+    }
+
+    .about-unique-section .caption-icon {
+        font-size: 30px;
+        color: #ff6600;
+        margin-right: 15px;
+    }
+
+    .about-unique-section .about-img img {
+        width: 100%;
+        border-radius: 15px;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .about-unique-section .about-img img:hover {
+        transform: scale(1.05);
+    }
+
+    /* Fade-in Animation */
+    .fade-in {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+
+    .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .about-unique-section .row {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .about-unique-section .about-img {
+            margin-top: 20px;
+        }
+    }
+
+
+
+    /* General Section Styling */
+.our-services {
+    padding: 80px 0;
+    background: #f8f9fa;
+    text-align: center;
+}
+
+/* Section Title Styling */
+.section-tittle span {
+    font-size: 18px;
+    color: #ff6600;
+    font-weight: bold;
+}
+
+.section-tittle h2 {
+    font-size: 34px;
+    font-weight: bold;
+    margin-top: 10px;
+    color: #333;
+}
+
+/* Service Box Styling */
+.single-services {
+    padding: 30px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 2px 4px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
+}
+
+.single-services:hover {
+    transform: translateY(-10px);
+    background: #ff6600;
+    color: white;
+}
+
+.single-services:hover .services-cap h5 a,
+.single-services:hover .services-cap p {
+    color: white;
+}
+
+/* Icon Styling */
+.services-icon i {
+    font-size: 40px;
+    color: #ff6600;
+    margin-bottom: 15px;
+    transition: color 0.3s ease-in-out;
+}
+
+.single-services:hover .services-icon i {
+    color: white;
+}
+
+/* Service Box Text */
+.services-cap h5 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.services-cap h5 a {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+.services-cap p {
+    color: #666;
+}
+
+/* Fade-in Animation */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .single-services {
+        margin-bottom: 20px;
+    }
+}
+
+</style>
+{% endblock head %}
+
+{% block content %}
+<section>
+    <div class="about-area2 section-padding30">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-md-12">
+                    <!-- about-img -->
+                    <div class="about-img ">
+                        <img src="{% static 'images/jawed1.jpg' %}" alt="" style="width: 80% !important; ">
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12">
+                    <div class="about-caption mb-50">
+                        <!-- Section Title -->
+                        <div class="section-tittle mb-35">
+                            <span>About Dream Home Consultant</span>
+                            <h2>Your Partner in Building Dreams</h2>
+                        </div>
+                        <p class="pera-top">
+                            At Dream Home Consultant, we are committed to transforming your visions into reality through our comprehensive expertise in engineering and design.
+                        </p>
+                        <p class="mb-65 pera-bottom">
+                            Our journey began in 2018, focusing on Civil Engineering, where we laid the foundation for our technical proficiency (2018-2020). We expanded our horizons with a B.Tech in Architecture (2021-2023), enhancing our ability to create innovative and sustainable designs.
+                        </p>
+                        <p class="mb-65 pera-bottom">
+                            To further enrich our understanding of client needs and project dynamics, we pursued a B.A in Psychology (2023-2025). This unique combination of skills allows us to approach projects with a holistic perspective.
+                        </p>
+                        {% comment %} <p class="mb-65 pera-bottom">
+                            Our professional experience spans various roles, including Site Engineer, 2D Drafter, and 3D Interior Designer. We also have a strong background in Sales within the real estate sector, as well as expertise in Estimate and Valuation.
+                        </p> {% endcomment %}
+                        <a href="{% url 'home' %}" class="border-btn">Explore Our Work</a>
+                    </div>
+                    {% comment %} <div class="about-caption mb-50">
+                        <!-- Section Title -->
+                        <div class="section-tittle mb-35">
+                            <span>About Our Studio</span>
+                            <h2>Designing Spaces That Inspire and Endure</h2>
+                        </div>
+                        <p class="pera-top">
+                            We are passionate about creating architectural designs that blend aesthetics, functionality, and sustainability. Our approach is rooted in innovation, precision, and a deep understanding of our clients' visions.
+                        </p>
+                        <p class="mb-65 pera-bottom">
+                            With years of experience in architectural design, we have crafted diverse projects, from modern residences to commercial landmarks. Our designs focus on timeless appeal, environmental harmony, and cutting-edge technology to bring ideas to life.
+                        </p>
+                        <a href="{% url 'home' %}" class="border-btn">Explore Our Work</a>
+                    </div> {% endcomment %}
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="about-low-area section-padding30 about-unique-section fade-in">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-md-12">
+                    {% comment %} <div class="about-caption mb-50">
+                        <!-- Section Title -->
+                        <div class="section-tittle mb-35">
+                            <span>Discover Your Taste</span>
+                            <h2>We Provide Good Food For Your Family!</h2>
+                        </div>
+                        <p>Ut enim acgsd minim veniam, quxcis nostrud exercitation ullamco laboris nisi ufsit aliquip ex ea commodo consequat is aute irure m, quis nostrud exer.</p>
+                    </div> {% endcomment %}
+                    <div class="about-caption mb-50">
+                        <!-- Section Title -->
+                        <div class="section-tittle mb-35">
+                            <span>About My Work</span>
+                            <h2>Crafting Solutions with Precision and Passion</h2>
+                        </div>
+                        <p>
+                            I am dedicated to delivering high-quality results, leveraging my expertise in real estate sales, estimation, and valuation to ensure every project is a success. My approach combines technical proficiency with a deep understanding of client aspirations, resulting in spaces that are both functional and inspiring.
+                        </p>
+                    </div>
+
+                    <!-- Feature Icons -->
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 mb-4 col-sm-6 col-xs-10">
+                            <div class="single-caption mb-20">
+                                <div class="caption-icon">
+                                    <i class="fa-solid fa-tools"></i>  <!-- Corrected Icon -->
+                                </div>
+                                <div class="caption">
+                                    <p>Site engineer</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-md-6 mb-4 col-sm-6 col-xs-10">
+                            <div class="single-caption mb-20">
+                                <div class="caption-icon">
+                                    <i class="fa-solid fa-drafting-compass"></i>  <!-- Corrected Icon -->
+                                </div>
+                                <div class="caption">
+                                    <p>2D Drafting</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-md-6 mb-4 col-sm-6 col-xs-10">
+                            <div class="single-caption mb-20">
+                                <div class="caption-icon">
+                                    <i class="fa-solid fa-cube"></i>  <!-- Corrected Icon -->
+                                </div>
+                                <div class="caption">
+                                    <p>3D interior designer</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-md-6 mb-4 col-sm-6 col-xs-10">
+                            <div class="single-caption mb-20">
+                                <div class="caption-icon">
+                                    <i class="fa-solid fa-handshake"></i>  <!-- Corrected Icon -->
+                                </div>
+                                <div class="caption">
+                                    <p>Sales in real estate</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- About Image -->
+                <div class="col-lg-6 col-md-12">
+                    <div class="about-img">
+                        <img src="{% static 'images/jawed2.jpg' %}" alt="About Our Restaurant" style="width: 80% !important; ">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="our-services section-padding30 fade-in">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-7 col-lg-8 col-md-10">
+                    <!-- Section Title -->
+                    <div class="section-tittle text-center mb-70">
+                        <span>Services We Offer</span>
+                        <h2>Our Best Services</h2>
+                    </div> 
+                </div>
+            </div>
+
+            <!-- Services Boxes -->
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="single-services text-center mb-30">
+                        <div class="services-icon">
+                            <i class="fa-solid fa-house"></i>  <!-- Updated Icon -->
+                        </div>
+                        <div class="services-cap">
+                            <h5><a href={% url 'home' %}>Properties</a></h5>
+                            <p>Explore our diverse range of properties, designed to meet all your real estate needs.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="single-services active text-center mb-30">
+                        <div class="services-icon">
+                            <i class="fa-solid fa-couch"></i>  <!-- Updated Icon -->
+                        </div>
+                        <div class="services-cap">
+                            <h5><a href={% url 'home' %}>Interior Design</a></h5>
+                            <p>Transform your space with our innovative and stylish interior design solutions.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="single-services text-center mb-30">
+                        <div class="services-icon">
+                            <i class="fa-solid fa-tree"></i>  <!-- Updated Icon -->
+                        </div>
+                        <div class="services-cap">
+                            <h5><a href={% url 'home' %}>Exterior Design</a></h5>
+                            <p>Enhance your property's curb appeal with our innovative exterior design solutions.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock content %}
+
+{% block javascript %}
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const elements = document.querySelectorAll(".fade-in");
+    
+        function checkVisibility() {
+            elements.forEach((element) => {
+                const rect = element.getBoundingClientRect();
+                if (rect.top < window.innerHeight - 100) {
+                    element.classList.add("visible");
+                }
+            });
+        }
+    
+        window.addEventListener("scroll", checkVisibility);
+        checkVisibility(); // Trigger on load
+    });
+</script>
+{% endblock javascript %}

@@ -1,0 +1,95 @@
+{% extends "common.html" %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{% static "css/contact.css" %}">
+{% endblock head %}
+
+{% block content %}
+
+<section class="top-image-section" style="position: relative; text-align: center;">
+    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 2; color: white; background: rgba(0, 0, 0, 0.5); padding: 10px 20px; border-radius: 5px;">
+        <div style="font-size: 70px;">Contact US</div>
+    </div>
+    <img src="https://images.pexels.com/photos/1722183/pexels-photo-1722183.jpeg" alt="Contact Us" class="top-image">
+
+</section>
+    
+<!-- Contact Details -->
+<section class="contact-details">
+    <div class="contact-container">
+        <div class="detail-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <div>
+                <h3>Our Address</h3>
+                <p>SECTOR 66
+                    EMMAR - THE PALM SQUARE,
+                    VATIKA CHOWK, GURGAON.</p>
+            </div>
+        </div>
+
+        <div class="detail-item">
+            <i class="fas fa-phone-alt"></i>
+            <div>
+                <h3>Call Us</h3>
+                {% comment %} <p>+1 (555) 987-6543</p> {% endcomment %}
+                <p>+91 87557 57375</p>
+                <p>+91 84493 30421</p>
+            </div>
+        </div>
+
+        <div class="detail-item">
+            <i class="fas fa-envelope"></i>
+            <div>
+                <h3>Email Us</h3>
+                <p>info.DreamHome99@gmail.com</p>
+            </div>
+        </div>
+
+        <div class="detail-item">
+            <i class="fas fa-clock"></i>
+            <div>
+                <h3>Opening Hours</h3>
+                <p> Open 24*7 </p>
+                {% comment %} <p>Mon - Fri: 9:00 AM - 7:00 PM</p>
+                <p>Sat: 10:00 AM - 5:00 PM</p>
+                <p>Sun: Closed</p> {% endcomment %}
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Form -->
+<section class="contact-form-section">
+    <div class="form-container">
+        <h2>Get in Touch</h2>
+        <form id="contact-form" method="POST" action="/contact/">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="name">Your Name<span class="required">*</span></label>
+                <input type="text" id="name" name="name" placeholder="Jane Doe" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Your Email<span class="required">*</span></label>
+                <input type="email" id="email" name="email" placeholder="jane.doe@example.com" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Your Phone</label>
+                <input type="text" id="phone" name="phone" placeholder="+1 (555) 123-4567">
+            </div>
+            <div class="form-group">
+                <label for="message">Your Message<span class="required">*</span></label>
+                <textarea id="message" name="message" rows="5" placeholder="I'm interested in learning more about your available properties..." required></textarea>
+            </div>
+            <button type="submit" class="btn">Send Message</button>
+        </form>
+        
+    </div>
+</section>
+
+{% endblock content %}
+
+{% block javascript %}
+<script src = "{% static "js/contact.js" %}"></script>
+{% endblock javascript %}
+

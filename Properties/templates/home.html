@@ -1,0 +1,358 @@
+{% extends "common.html" %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static "css/properties.css" %}" />
+<link rel="stylesheet" type="text/css" href="{% static "css/home1.css" %}">
+<link rel="stylesheet" type="text/css" href="{% static "css/home2.css" %}">
+<style type="text/css">
+    #freecssfooter{display:block;width:100%;padding:120px 0 20px;overflow:hidden;background-color:transparent;z-index:5000;text-align:center;}
+    #freecssfooter div#fcssholder div{display:none;}
+    #freecssfooter div#fcssholder div:first-child{display:block;}
+    #freecssfooter div#fcssholder div:first-child a{float:none;margin:0 auto;}
+</style>
+{% endblock head %}
+
+{% block content %}
+
+<div class="intro intro-carousel">
+    <div id="carousel" class="owl-carousel owl-theme">
+      {% comment %} <div class="carousel-item-a intro-item bg-image" style="background-image:url(https://dejavuproperties.com/wp-content/uploads/2024/06/How-Dubais-new-development.jpg);"> {% endcomment %}
+      <div class="carousel-item-a intro-item bg-image" style="background-image:url(https://images.pexels.com/photos/1722183/pexels-photo-1722183.jpeg);">
+        <div class="overlay overlay-a"></div>
+        <div class="intro-content display-table">
+          <div class="table-cell">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-8">
+                  <div class="intro-body">
+                    {% comment %} <p class="intro-title-top">Doral, Florida<br>
+                      78345</p> {% endcomment %}
+                    {% comment %} <h1 class="intro-title mb-4"><span class="color-b">204</span> Rino<br>
+                      Venda Road Five</h1> {% endcomment %}
+                      <h1 class="intro-title mb-4"><span class="color-b">Real Estate</span>  <br>
+                        Properties</h1>
+                    {% comment %} <p class="intro-subtitle intro-price"><a href="{% url 'properties' %}"><span class="price-a">BUY | 4 Cr</span></a></p> {% endcomment %}
+                    <p class="intro-subtitle intro-price"><a href="{% url 'home' %}"><span class="price-a">Explore More</span></a></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% comment %} <div class="carousel-item-a intro-item bg-image" style="background-image:url('{% static "images/slide-1.jpg" %}')"> {% endcomment %}
+      <div class="carousel-item-a intro-item bg-image" style="background-image: url('{% static 'images/slide-1.jpg' %}');">
+
+        <div class="overlay overlay-a"></div>
+        <div class="intro-content display-table">
+          <div class="table-cell">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-8">
+                  <div class="intro-body">
+                    {% comment %} <p class="intro-title-top">Doral, Florida<br>
+                      78345</p> {% endcomment %}
+                    <h1 class="intro-title mb-4"><span class="color-b">Interior</span><br>
+                      Designs</h1>
+                    <p class="intro-subtitle intro-price"><a href="{% url 'home' %}"><span class="price-a">Explore More</span></a></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="carousel-item-a intro-item bg-image" style="background-image:url('{% static 'images/slide-3.jpg' %}')">
+        <div class="overlay overlay-a"></div>
+        <div class="intro-content display-table">
+          <div class="table-cell">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-8">
+                  <div class="intro-body">
+                    {% comment %} <p class="intro-title-top">Doral, Florida<br>
+                      78345</p> {% endcomment %}
+                    <h1 class="intro-title mb-4"><span class="color-b">Exterior</span><br>
+                      Designs</h1>
+                    <p class="intro-subtitle intro-price"><a href="{% url 'home' %}"><span class="price-a">Explore More</span></a></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <section class="section-services section-t8">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="title-wrap d-flex justify-content-between">
+            <div class="title-box">
+              <h2 class="title-a">Our Services</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card-box-c foo">
+            <div class="card-header-c d-flex">
+              <div class="card-box-ico"><span class="fas fa-home"></span></div>
+              <div class="card-title-c align-self-center">
+                <h2 class="title-c">Real Estate</h2>
+              </div>
+            </div>
+            <div class="card-body-c">
+              <p class="content-c">Sed porttitor lectus nibh. Cras ultricies ligula sed magna dictum porta. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi.</p>
+            </div>
+            <div class="card-footer-c"><a href="{% url 'home' %}" class="link-c link-icon">Read more <span class="fa-solid fa-arrow-right"></span></a></div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card-box-c foo">
+            <div class="card-header-c d-flex">
+              <div class="card-box-ico"><span class="fas fa-building"></span></div>
+              <div class="card-title-c align-self-center">
+                <h2 class="title-c">Architecture</h2>
+              </div>
+            </div>
+            <div class="card-body-c">
+              <p class="content-c">Nulla porttitor accumsan tincidunt. Curabitur aliquet quam id dui posuere blandit. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.</p>
+            </div>
+            <div class="card-footer-c"><a href="{% url 'home' %}" class="link-c link-icon">Read more <span class="fa-solid fa-arrow-right"></span></a></div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card-box-c foo">
+            <div class="card-header-c d-flex">
+              <div class="card-box-ico"><span class="fas fa-hand-holding-heart"></span></div>
+              <div class="card-title-c align-self-center">
+                <h2 class="title-c">Donate Trust</h2>
+              </div>
+            </div>
+            <div class="card-body-c">
+              <p class="content-c">Sed porttitor lectus nibh. Cras ultricies ligula sed magna dictum porta. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi.</p>
+            </div>
+            <div class="card-footer-c"><a href="{% url 'home' %}" class="link-c link-icon">Read more <span class="fa-solid fa-arrow-right"></span></a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section-property section-t8">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="title-wrap d-flex justify-content-between">
+            <div class="title-box">
+              <h2 class="title-a">Latest Properties</h2>
+            </div>
+            <div class="title-link"><a href="{% url 'home' %}">All Property <span class="fa-solid fa-arrow-right"></span></a></div>
+          </div>
+        </div>
+      </div>
+      <div id="property-carousel" class="owl-carousel owl-theme">
+        {% for cards in cards %}
+          <div class="carousel-item-b" style=" width:360px;height: 400px;">
+              <div class="card-box-a card-shadow" style="margin-inline:10px">
+                  <div class="img-box-a">
+                      <img src="{{ cards.image.url}}" alt="website template image" class="img-a img-fluid" style="width:360px;height: 400px;">
+                  </div>
+                  <div class="card-overlay">
+                      <div class="card-overlay-a-content">
+                          <div class="card-header-a">
+                              <h2 class="card-title-a">
+                                  <a href="{% url 'home' %}">{{ cards.title }}</a>
+                              </h2>
+                          </div>
+                          <div class="card-body-a">
+                              <div class="price-box d-flex">
+                                  <span class="price-a">BUY | {{ cards.price }}</span>
+                              </div>
+                              <a href="{% url 'home' %}" class="link-a">Click here to view <span class="fa-solid fa-arrow-right"></span></a>
+                          </div>
+                          <div class="card-footer-a">
+                              <ul class="card-info d-flex justify-content-around">
+                                  <li>
+                                      <h4 class="card-info-title">Area</h4>
+                                      <span>2m<sup>2</sup></span>
+                                  </li>
+                                  <li>
+                                      <h4 class="card-info-title">Beds</h4>
+                                      <span>12</span>
+                                  </li>
+                                  <li>
+                                      <h4 class="card-info-title">Baths</h4>
+                                      <span>13</span>
+                                  </li>
+                                  <li>
+                                      <h4 class="card-info-title">Garages</h4>
+                                      <span>11</span>
+                                  </li>
+                              </ul>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          {% endfor %}
+      </div>
+    </div>
+  </section>
+  <section class="section-agents section-t8">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="title-wrap d-flex justify-content-between">
+            <div class="title-box">
+              <h2 class="title-a">Interior Designs</h2>
+            </div>
+            <div class="title-link"><a href="{% url "home" %}">Interior <span class="fa-solid fa-arrow-right"></span></a></div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        {% for interior in agents|slice:":3" %}
+        <div class="col-md-4">
+          <div class="card-box-d" style="height: 400px;">
+            <div class="card-img-d">
+              <img src="{{ interior.image.url }}" alt="website template image" class="img-d img-fluid" style="height: 400px;">
+            </div>
+            <div class="card-overlay card-overlay-hover">
+              <div class="card-header-d">
+                <div class="card-title-d align-self-center">
+                  <h3 class="title-d">
+                    <a href="{% url 'home' %}" class="link-two">{{ arch.title }}<br>JAWED</a>
+                  </h3>
+                </div>
+              </div>
+              <div class="card-body-d">
+                <p class="content-d color-text-a">{{ arch.description }}</p>
+                <div class="info-agents color-a">
+                  <p><strong>Phone:</strong> 9466703459</p>
+                  <p><strong>Email:</strong> gargy5703@gmail.com</p>
+                </div>
+              </div>
+              <div class="card-footer-d">
+                <div class="socials-footer d-flex justify-content-center">
+                  <ul class="list-inline">
+                    <li class="list-inline-item"><a href="https://www.moviqs.com" class="link-one"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                    <li class="list-inline-item"><a href="https://www.moviqs.com" class="link-one"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                    <li class="list-inline-item"><a href="https://www.moviqs.com" class="link-one"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                    <li class="list-inline-item"><a href="https://www.moviqs.com" class="link-one"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>
+                    <li class="list-inline-item"><a href="https://www.moviqs.com" class="link-one"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  <section class="section-news section-t8">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="title-wrap d-flex justify-content-between">
+            <div class="title-box">
+              <h2 class="title-a">Exterior Designs</h2>
+            </div>
+            <div class="title-link"><a href="{% url "home" %}">Exterior <span class="fa-solid fa-arrow-right"></span></a></div>
+          </div>
+        </div>
+      </div>
+      <div id="new-carousel" class="owl-carousel owl-theme">
+        {% for exterior in exterior %}
+          <div class="carousel-item-c">
+            <div class="card-box-b card-shadow news-box">
+              <div class="img-box-b">
+                <img src="{{ exterior.image.url }}" alt="website template image"  style="height: 400px;" class="img-b img-fluid">
+              </div>
+              <div class="card-overlay">
+                <div class="card-header-b">
+                  <div class="card-category-b">
+                    <a href="https://www.moviqs.com" class="category-b">{{ exterior.title }}</a>
+                  </div>
+                  <div class="card-title-b">
+                    <h2 class="title-2">
+                      <a href="pages/blog-single.php">{{ exterior.description }}<br>new</a>
+                    </h2>
+                  </div>
+                  <div class="card-date"><span class="date-b">12-02-2025</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  <section class="section-testimonials section-t8 nav-arrow-a">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="title-wrap d-flex justify-content-between">
+            <div class="title-box">
+              <h2 class="title-a">Clients</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="testimonial-carousel" class="owl-carousel owl-arrow">
+        {% for clients in clients %}
+        <div class="carousel-item-a">
+          <div class="testimonials-box">
+            <div class="row">
+              <div class="col-sm-12 col-md-6">
+                <div class="testimonial-img"><img src="{{ clients.client_pic.url }}" alt="website template image" class="img-fluid"></div>
+              </div>
+              <div class="col-sm-12 col-md-6">
+                <div class="testimonial-ico"><span class="fa fa-quote-left"></span></div>
+                <div class="testimonials-content">
+                  <p class="testimonial-text">{{clients.message}}</p>
+                </div>
+                <div class="testimonial-author-box"><img src="{{ clients.client_pic.url }}" alt="website template image" class="testimonial-avatar">
+                  <h5 class="testimonial-author">{{clients.name}}</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+
+        {% comment %} <div class="carousel-item-a">
+          <div class="testimonials-box">
+            <div class="row">
+              <div class="col-sm-12 col-md-6">
+                <div class="testimonial-img"><img src="{% static 'images/testimonial-2.jpg' %}" alt="website template image" class="img-fluid"></div>
+              </div>
+              <div class="col-sm-12 col-md-6">
+                <div class="testimonial-ico"><span class="fa fa-quote-left"></span></div>
+                <div class="testimonials-content">
+                  <p class="testimonial-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, cupiditate ea nam praesentium debitis hic ber quibusdam voluptatibus officia expedita corpori.</p>
+                </div>
+                <div class="testimonial-author-box"><img src="{% static 'images/mini-testimonial-2.jpg' %}" alt="website template image" class="testimonial-avatar">
+                  <h5 class="testimonial-author">Pablo &amp; Emma</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> {% endcomment %}
+      </div>
+    </div>
+  </section>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.1/jquery-migrate.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.8/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.6.2/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script src="assets/js/home2.js"></script>
+{% endblock content %}

@@ -1,0 +1,150 @@
+
+    /* General Reset */
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f7f8fc;
+      }
+  
+      h1 {
+        text-align: center;
+        margin: 20px 0;
+        color: #333;
+      }
+  
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+  
+      .card-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+      }
+  
+      .card {
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+  
+      .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+      }
+  
+      .card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+      }
+  
+      .card-body {
+        padding: 20px;
+      }
+  
+      .card-title {
+        font-size: 1.25rem;
+        margin: 0 0 10px;
+        color: #333;
+      }
+  
+      .card-price {
+        font-size: 1.1rem;
+        color: #27ae60;
+        margin-bottom: 15px;
+      }
+  
+      .card-btn {
+        display: inline-block;
+        padding: 10px 15px;
+        background: #007bff;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 4px;
+        text-align: center;
+        transition: background 0.3s ease;
+      }
+  
+      .card-btn:hover {
+        background: #0056b3;
+      }
+  
+      /* Responsive */
+      @media (max-width: 768px) {
+        .card-body {
+          padding: 15px;
+        }
+  
+        .card-title {
+          font-size: 1rem;
+        }
+      }
+      
+       body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: #f7f8fc;
+      }
+  
+      /* Hero Section */
+      .hero {
+        position: relative;
+        height: 60vh; /* Adjust height as needed */
+        background: url('https://img.staticmb.com/mbcontent/images/crop/uploads/2024/6/legal-documents-required-to-buy-property-in-india_0_1200.jpg') no-repeat center center/cover;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        text-align: center;
+        overflow: hidden;
+        border-radius: 10px;
+      }
+  
+      .hero-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        /* background: rgba(0, 0, 0, 0.5); Dark overlay */
+        z-index: 1;
+      }
+  
+      .hero-content {
+        position: relative;
+        z-index: 2;
+        padding: 20px;
+      }
+  
+      .hero-content h1 {
+        font-size: 2.5rem;
+        margin: 0;
+      }
+  
+      .hero-content p {
+        font-size: 1.2rem;
+        margin: 10px 0 20px;
+      }
+  
+      .hero-content span {
+        font-size: 1rem;
+        display: block;
+        margin-bottom: 10px;
+        opacity: 0.8;
+      }
+  
+      @media (max-width: 768px) {
+        .hero-content h1 {
+          font-size: 2rem;
+        }
+  
+        .hero-content p {
+          font-size: 1rem;
+        }
+      }
