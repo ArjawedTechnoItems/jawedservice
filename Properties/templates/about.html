@@ -25,7 +25,7 @@
 
     .section-tittle span {
         font-size: 18px;
-        color: #ff6600;
+        color: #327c83;
         font-weight: bold;
     }
 
@@ -44,8 +44,8 @@
     .border-btn {
         display: inline-block;
         padding: 10px 25px;
-        border: 2px solid #ff6600;
-        color: #ff6600;
+        border: 2px solid #327c83;
+        color: #327c83;
         text-decoration: none;
         font-weight: bold;
         border-radius: 5px;
@@ -53,7 +53,7 @@
     }
 
     .border-btn:hover {
-        background-color: #ff6600;
+        background-color: #327c83;
         color: white;
     }
 
@@ -95,7 +95,7 @@
 
     .about-unique-section .section-tittle span {
         font-size: 18px;
-        color: #ff6600;
+        color: #327c83;
         font-weight: bold;
     }
 
@@ -128,7 +128,7 @@
 
     .about-unique-section .caption-icon {
         font-size: 30px;
-        color: #ff6600;
+        color: #327c83;
         margin-right: 15px;
     }
 
@@ -169,92 +169,92 @@
 
 
     /* General Section Styling */
-.our-services {
-    padding: 80px 0;
-    background: #f8f9fa;
-    text-align: center;
-}
-
-/* Section Title Styling */
-.section-tittle span {
-    font-size: 18px;
-    color: #ff6600;
-    font-weight: bold;
-}
-
-.section-tittle h2 {
-    font-size: 34px;
-    font-weight: bold;
-    margin-top: 10px;
-    color: #333;
-}
-
-/* Service Box Styling */
-.single-services {
-    padding: 30px;
-    background: white;
-    border-radius: 15px;
-    box-shadow: 2px 4px 20px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
-}
-
-.single-services:hover {
-    transform: translateY(-10px);
-    background: #ff6600;
-    color: white;
-}
-
-.single-services:hover .services-cap h5 a,
-.single-services:hover .services-cap p {
-    color: white;
-}
-
-/* Icon Styling */
-.services-icon i {
-    font-size: 40px;
-    color: #ff6600;
-    margin-bottom: 15px;
-    transition: color 0.3s ease-in-out;
-}
-
-.single-services:hover .services-icon i {
-    color: white;
-}
-
-/* Service Box Text */
-.services-cap h5 {
-    font-size: 22px;
-    margin-bottom: 10px;
-}
-
-.services-cap h5 a {
-    color: #333;
-    text-decoration: none;
-    transition: color 0.3s ease-in-out;
-}
-
-.services-cap p {
-    color: #666;
-}
-
-/* Fade-in Animation */
-.fade-in {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-}
-
-.fade-in.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-    .single-services {
-        margin-bottom: 20px;
+    .our-services {
+        padding: 80px 0;
+        background: #f8f9fa;
+        text-align: center;
     }
-}
+
+    /* Section Title Styling */
+    .section-tittle span {
+        font-size: 18px;
+        color: #327c83;
+        font-weight: bold;
+    }
+
+    .section-tittle h2 {
+        font-size: 34px;
+        font-weight: bold;
+        margin-top: 10px;
+        color: #333;
+    }
+
+    /* Service Box Styling */
+    .single-services {
+        padding: 30px;
+        background: white;
+        border-radius: 15px;
+        box-shadow: 2px 4px 20px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
+    }
+
+    .single-services:hover {
+        transform: translateY(-10px);
+        background: #327c83;
+        color: white;
+    }
+
+    .single-services:hover .services-cap h5 a,
+    .single-services:hover .services-cap p {
+        color: white;
+    }
+
+    /* Icon Styling */
+    .services-icon i {
+        font-size: 40px;
+        color: #327c83;
+        margin-bottom: 15px;
+        transition: color 0.3s ease-in-out;
+    }
+
+    .single-services:hover .services-icon i {
+        color: white;
+    }
+
+    /* Service Box Text */
+    .services-cap h5 {
+        font-size: 22px;
+        margin-bottom: 10px;
+    }
+
+    .services-cap h5 a {
+        color: #333;
+        text-decoration: none;
+        transition: color 0.3s ease-in-out;
+    }
+
+    .services-cap p {
+        color: #666;
+    }
+
+    /* Fade-in Animation */
+    .fade-in {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+
+    .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+        .single-services {
+            margin-bottom: 20px;
+        }
+    }
 
 </style>
 {% endblock head %}
@@ -267,7 +267,8 @@
                 <div class="col-lg-6 col-md-12">
                     <!-- about-img -->
                     <div class="about-img ">
-                        <img src="{% static 'images/jawed1.jpg' %}" alt="" style="width: 80% !important; ">
+                        <img src="https://i.postimg.cc/CLKftm9m/jawed1.jpg"alt=""style="width: 80% !important;">
+                        {% comment %} <img src="{% static 'images/jawed1.jpg' %}" alt="" style="width: 80% !important; "> {% endcomment %}
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-12">
@@ -386,7 +387,8 @@
                 <!-- About Image -->
                 <div class="col-lg-6 col-md-12">
                     <div class="about-img">
-                        <img src="{% static 'images/jawed2.jpg' %}" alt="About Our Restaurant" style="width: 80% !important; ">
+                        <img src="https://i.postimg.cc/5NtFGnDk/jawed2.jpg"alt="Founder image"style="width: 80% !important;">
+                        {% comment %} <img src="{% static 'images/jawed2.jpg' %}" alt="About Our Restaurant" style="width: 80% !important; "> {% endcomment %}
                     </div>
                 </div>
             </div>

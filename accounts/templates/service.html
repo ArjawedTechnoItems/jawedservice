@@ -1,0 +1,303 @@
+{% extends "common.html" %}
+{% load static %}
+
+{% block content %}
+<style>
+    * {
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  overflow-x: hidden !important;
+}
+
+.table-users {
+  width: 100%;
+  max-width: 1200px;
+  margin: 10px auto;
+  overflow: hidden;
+}
+@media (max-width: 768px) {
+
+  .table-users {
+    margin: 10px;
+    width: calc(100% - 20px);
+  }
+
+  table,
+  thead,
+  tbody,
+  tr,
+  td {
+    display: block;
+    width: 100%;
+  }
+
+  thead {
+    display: none;
+  }
+
+  tr {
+    margin-bottom: 15px;
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  }
+
+  td {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;   /* 🔥 FIX */
+    gap: 10px;                     /* 🔥 FIX */
+    padding: 6px 0;
+    border-bottom: 1px solid #eee;
+    word-break: break-word;
+  }
+
+  td:last-child {
+    border-bottom: none;
+  }
+
+  td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: #327c83;
+    min-width: 80px;              /* 🔥 FIX */
+    flex-shrink: 0;               /* 🔥 FIX */
+  }
+
+  img {
+    width: 45px;
+    height: 45px;
+    flex-shrink: 0;
+  }
+}
+
+
+
+body {
+  background-color: #d9ecee;
+  box-sizing: border-box;
+}
+
+.header {
+  background-color: #327c83;
+  color: white;
+  font-size: 1.5em;
+  padding: 1rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+img {
+  border-radius: 50%;
+  height: 70px;
+  width: 70px;
+  object-fit: cover;
+}
+
+.table-users {
+  border: 1px solid #327c83;
+  border-radius: 10px;
+  box-shadow: 3px 3px 0 rgba(0,0,0,0.1);
+  max-width: calc(100% - 2em);
+  margin: 1em auto;
+  overflow: hidden;
+  {% comment %} width: 1200px; {% endcomment %}
+}
+
+table {
+  width: 100%;
+}
+
+th, td {
+  color: #2a6f75;
+  padding: 10px;
+}
+
+td {
+  text-align: center;
+  vertical-align: middle;
+}
+
+td:last-child {
+  font-size: 0.95em;
+  line-height: 1.4;
+  text-align: left;
+}
+
+th {
+  background-color: #eef6f7;
+  font-weight: 300;
+}
+
+tr:nth-child(even) {
+  background-color: white;
+}
+
+tr:nth-child(odd) {
+  background-color: #f2f9fa;
+}
+
+/* Mobile */
+@media screen and (max-width: 700px) {
+  table, tr, td {
+    display: block;
+  }
+
+  tr:first-child {
+    display: none;
+  }
+
+  td {
+    text-align: left;
+    padding-left: 90px;
+    position: relative;
+  }
+
+  td:before {
+    position: absolute;
+    left: 10px;
+    font-weight: bold;
+    color: #6fb3b8;
+  }
+
+  td:nth-child(2):before { content: "Name:"; }
+  td:nth-child(3):before { content: "Email:"; }
+  td:nth-child(4):before { content: "Phone:"; }
+  td:nth-child(5):before { content: "Work:"; }
+}
+
+.filter-bar {
+  max-width: 1200px;
+  margin: 100px 20px 10px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.filter-bar form {
+  display: flex;
+  gap: 10px;
+}
+
+.filter-bar select {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #327c83;
+  font-size: 14px;
+}
+
+.filter-bar button {
+  background: #327c83;
+  color: white;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.filter-bar button:hover {
+  background: #285f64;
+}
+
+
+.pagination {
+  text-align: center;
+  padding: 20px;
+}
+
+.pagination a {
+  text-decoration: none;
+  background: #327c83;
+  color: white;
+  padding: 6px 14px;
+  margin: 0 5px;
+  border-radius: 5px;
+}
+
+.pagination a:hover {
+  background: #285f64;
+}
+
+.pagination span {
+  margin: 0 10px;
+  font-weight: 600;
+  color: #2a6f75;
+}
+
+</style>
+<div class="filter-bar">
+  <form method="get">
+    <select name="category">
+      <option value="">All Categories</option>
+      {% for key, value in categories %}
+        <option value="{{ key }}"
+          {% if selected_category == key %}selected{% endif %}>
+          {{ value }}
+        </option>
+      {% endfor %}
+    </select>
+
+    <button type="submit">Filter</button>
+  </form>
+</div>
+
+<div class="table-users">
+   <div class="header">SERVICE PROVIDER</div>
+   
+   <table cellspacing="0">
+      <tr style="text-align: center;">
+         <th>Service Id</th>
+         <th>Picture</th>
+         <th>Name</th>
+         <th>Work Timing</th>
+         <th>Work</th>
+         <th width="230">About Work</th>
+      </tr>
+
+      {% for profile in profiles %}
+      <tr>
+         <td>{{ profile.service_id }}</td>
+         <td>
+            {% if profile.profile_pic %}
+              <img src="{{ profile.profile_pic.url }}">
+            {% else %}
+              <img src="{% static 'images/default-user.png' %}">
+            {% endif %}
+         </td>
+         <td>{{ profile.full_name }}</td>
+         <td><strong>{{ profile.work }}</strong></td>
+         <td><strong>{{ profile.service_category }}</strong></td>
+         <td>
+            <br>
+            {{ profile.work_description|truncatewords:15 }}
+         </td>
+      </tr>
+      {% empty %}
+      <tr>
+         <td colspan="5" style="text-align:center;">
+            No users found
+         </td>
+      </tr>
+      {% endfor %}
+   </table>
+</div>
+
+<div class="pagination">
+  {% if profiles.has_previous %}
+    <a href="?page={{ profiles.previous_page_number }}{% if selected_category %}&category={{ selected_category }}{% endif %}">« Prev</a>
+  {% endif %}
+
+  <span>
+    Page {{ profiles.number }} of {{ profiles.paginator.num_pages }}
+  </span>
+
+  {% if profiles.has_next %}
+    <a href="?page={{ profiles.next_page_number }}{% if selected_category %}&category={{ selected_category }}{% endif %}">Next »</a>
+  {% endif %}
+</div>
+
+
+{% endblock %}

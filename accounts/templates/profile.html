@@ -1,0 +1,222 @@
+{% extends "common.html" %}
+{% load static %}
+
+{% block content %}
+
+<style>
+    body {
+        background: #f4f6f9;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    /* Animations */
+    @keyframes fadeSlide {
+        from {
+            opacity: 0;
+            transform: translateY(25px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .profile-container {
+    max-width: 900px;
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    animation: fadeSlide 0.8s ease-in-out;
+}
+
+/* 📱 Mobile screens */
+@media (max-width: 768px) {
+    .profile-container {
+        margin: 100px 10px 20px 10px;
+    }
+}
+
+/* 💻 Laptop & Desktop screens */
+@media (min-width: 769px) {
+    .profile-container {
+        margin: 40px auto;
+    }
+}
+
+
+    .profile-header {
+        background: linear-gradient(120deg, #667eea, #764ba2);
+        padding: 20px;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .profile-left {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .profile-header img {
+        width: 140px;
+        height: 140px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 5px solid #fff;
+        animation: fadeSlide 1s ease;
+    }
+
+    .profile-header h2 {
+        margin: 0;
+        font-size: 28px;
+    }
+
+    .profile-header p {
+        margin: 5px 0;
+        font-size: 15px;
+        opacity: 0.9;
+    }
+
+    .logout-btn {
+        background: rgba(255, 255, 255, 0.2);
+        border: 2px solid #fff;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 25px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+    }
+
+    .logout-btn:hover {
+        background: #fff;
+        color: #667eea;
+    }
+
+    .profile-body {
+        padding: 30px;
+        animation: fadeSlide 1s ease;
+    }
+
+    .profile-section {
+        margin-bottom: 25px;
+    }
+
+    .profile-section h3 {
+        font-size: 18px;
+        color: #333;
+        margin-bottom: 10px;
+        border-left: 4px solid #667eea;
+        padding-left: 10px;
+    }
+
+    .profile-info {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 15px;
+    }
+
+    .info-box {
+        background: #f8f9fc;
+        padding: 12px 15px;
+        border-radius: 8px;
+        font-size: 14px;
+        color: #444;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .info-box:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+    }
+
+    .info-box span {
+        font-weight: 600;
+        color: #222;
+    }
+
+    .profile-actions {
+        text-align: center;
+        padding: 20px;
+        background: #f4f6f9;
+        animation: fadeSlide 1.2s ease;
+    }
+
+    .edit-btn {
+        background: #667eea;
+        color: white;
+        padding: 12px 30px;
+        border-radius: 30px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: background 0.3s, transform 0.2s;
+    }
+
+    .edit-btn:hover {
+        background: #5a67d8;
+        transform: translateY(-2px);
+    }
+</style>
+
+<div class="profile-container">
+
+    <!-- Header -->
+    <div class="profile-header">
+
+        <div class="profile-left">
+            {% if profile.profile_pic %}
+                <img src="{{ profile.profile_pic.url }}" alt="Profile Picture">
+            {% else %}
+                <img src="{% static 'images/default-user.png' %}" alt="Profile Picture">
+            {% endif %}
+
+            <div>
+                <h2>{{ profile.full_name }}</h2>
+                <p>{{ profile.work }}</p>
+                <p>{{ profile.location }}</p>
+            </div>
+        </div>
+
+        <!-- Logout Button -->
+        <a href="{% url 'logout' %}" class="logout-btn">Logout</a>
+
+    </div>
+
+    <!-- Body -->
+    <div class="profile-body">
+
+        <div class="profile-section">
+            <h3>Personal Information</h3>
+            <div class="profile-info">
+                <div class="info-box"><span>Email:</span> {{ profile.user.email }}</div>
+                <div class="info-box"><span>Phone:</span> {{ profile.phone }}</div>
+                <div class="info-box"><span>Address:</span> {{ profile.address }}</div>
+            </div>
+        </div>
+
+        <div class="profile-section">
+            <h3>Professional Details</h3>
+            <div class="profile-info">
+                <div class="info-box"><span>Service category:</span> {{ profile.service_category }}</div>
+                <div class="info-box"><span>Working Time:</span> {{ profile.work }}</div>
+                <div class="info-box"><span>Experience:</span> {{ profile.experience }}</div>
+                <div class="info-box">
+                    <span>Description:</span><br>
+                    {{ profile.work_description }}
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Actions -->
+    <div class="profile-actions">
+        <a href="{% url 'edit_profile' %}" class="edit-btn">Edit Profile</a>
+    </div>
+
+</div>
+
+{% endblock content %}

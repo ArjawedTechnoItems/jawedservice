@@ -15,7 +15,7 @@
 
 {% block content %}
 
-<div class="intro intro-carousel">
+  <div class="intro intro-carousel">
     <div id="carousel" class="owl-carousel owl-theme">
       {% comment %} <div class="carousel-item-a intro-item bg-image" style="background-image:url(https://dejavuproperties.com/wp-content/uploads/2024/06/How-Dubais-new-development.jpg);"> {% endcomment %}
       <div class="carousel-item-a intro-item bg-image" style="background-image:url(https://images.pexels.com/photos/1722183/pexels-photo-1722183.jpeg);">
@@ -33,7 +33,7 @@
                       <h1 class="intro-title mb-4"><span class="color-b">Real Estate</span>  <br>
                         Properties</h1>
                     {% comment %} <p class="intro-subtitle intro-price"><a href="{% url 'properties' %}"><span class="price-a">BUY | 4 Cr</span></a></p> {% endcomment %}
-                    <p class="intro-subtitle intro-price"><a href="{% url 'home' %}"><span class="price-a">Explore More</span></a></p>
+                    <p class="intro-subtitle intro-price"><a href="{% url 'contact' %}"><span class="price-a">Explore More</span></a></p>
                   </div>
                 </div>
               </div>
@@ -42,8 +42,8 @@
         </div>
       </div>
       {% comment %} <div class="carousel-item-a intro-item bg-image" style="background-image:url('{% static "images/slide-1.jpg" %}')"> {% endcomment %}
-      <div class="carousel-item-a intro-item bg-image" style="background-image: url('{% static 'images/slide-1.jpg' %}');">
-
+      {% comment %} <div class="carousel-item-a intro-item bg-image" style="background-image: url('{% static 'images/slide-1.jpg' %}');"> {% endcomment %}
+      <div class="carousel-item-a intro-item bg-image" style="background-image: url('https://i.postimg.cc/VvL42zWj/slide-1.jpg');">
         <div class="overlay overlay-a"></div>
         <div class="intro-content display-table">
           <div class="table-cell">
@@ -55,7 +55,7 @@
                       78345</p> {% endcomment %}
                     <h1 class="intro-title mb-4"><span class="color-b">Interior</span><br>
                       Designs</h1>
-                    <p class="intro-subtitle intro-price"><a href="{% url 'home' %}"><span class="price-a">Explore More</span></a></p>
+                    <p class="intro-subtitle intro-price"><a href="{% url 'contact' %}"><span class="price-a">Explore More</span></a></p>
                   </div>
                 </div>
               </div>
@@ -63,8 +63,8 @@
           </div>
         </div>
       </div>
-      
-      <div class="carousel-item-a intro-item bg-image" style="background-image:url('{% static 'images/slide-3.jpg' %}')">
+      <div class="carousel-item-a intro-item bg-image" style="background-image: url('https://i.postimg.cc/GtdmkmnJ/slide-3.jpg');">
+      {% comment %} <div class="carousel-item-a intro-item bg-image" style="background-image:url('{% static 'images/slide-3.jpg' %}')"> {% endcomment %}
         <div class="overlay overlay-a"></div>
         <div class="intro-content display-table">
           <div class="table-cell">
@@ -76,7 +76,7 @@
                       78345</p> {% endcomment %}
                     <h1 class="intro-title mb-4"><span class="color-b">Exterior</span><br>
                       Designs</h1>
-                    <p class="intro-subtitle intro-price"><a href="{% url 'home' %}"><span class="price-a">Explore More</span></a></p>
+                    <p class="intro-subtitle intro-price"><a href="{% url 'contact' %}"><span class="price-a">Explore More</span></a></p>
                   </div>
                 </div>
               </div>
@@ -86,63 +86,161 @@
       </div>
     </div>
   </div>
-  <section class="section-services section-t8">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="title-wrap d-flex justify-content-between">
-            <div class="title-box">
-              <h2 class="title-a">Our Services</h2>
-            </div>
-          </div>
-        </div>
+  <section class="section-services section-t8" style="padding:60px 15px;">
+    <div class="container" style="max-width:1200px;margin:auto;">
+      
+      <!-- Title -->
+      <div style="text-align:center;margin-bottom:40px;">
+        <h2 style="font-size:32px;font-weight:600;color:#2a6f75;">Our Services</h2>
       </div>
-      <div class="row">
-        <div class="col-md-4">
-          <div class="card-box-c foo">
-            <div class="card-header-c d-flex">
-              <div class="card-box-ico"><span class="fas fa-home"></span></div>
-              <div class="card-title-c align-self-center">
-                <h2 class="title-c">Real Estate</h2>
-              </div>
+
+      <!-- Cards Row -->
+      <div style="
+        display:flex;
+        flex-wrap:wrap;
+        gap:20px;
+        justify-content:center;
+      ">
+
+        <!-- Card 1 -->
+        <div style="
+          flex:1 1 300px;
+          max-width:350px;
+          background:#fff;
+          border-radius:15px;
+          padding:25px;
+          box-shadow:0 8px 25px rgba(0,0,0,0.1);
+          transition:all 0.3s ease;
+        "
+        onmouseover="this.style.transform='translateY(-8px)'"
+        onmouseout="this.style.transform='translateY(0)'">
+
+          <div style="display:flex;align-items:center;margin-bottom:20px;">
+            <div style="
+              width:55px;height:55px;
+              background:#327c83;
+              color:#fff;
+              border-radius:50%;
+              display:flex;
+              align-items:center;
+              justify-content:center;
+              font-size:22px;
+              margin-right:15px;
+            ">
+              <span class="fas fa-home"></span>
             </div>
-            <div class="card-body-c">
-              <p class="content-c">Sed porttitor lectus nibh. Cras ultricies ligula sed magna dictum porta. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi.</p>
-            </div>
-            <div class="card-footer-c"><a href="{% url 'home' %}" class="link-c link-icon">Read more <span class="fa-solid fa-arrow-right"></span></a></div>
+            <h2 style="margin:0;font-size:22px;color:#2a6f75;">Real Estate</h2>
           </div>
+
+          <p style="color:#555;font-size:15px;line-height:1.6;">
+            Sed porttitor lectus nibh. Cras ultricies ligula sed magna dictum porta.
+          </p>
+
+          <a href="{% url 'contact' %}" style="
+            display:inline-block;
+            margin-top:15px;
+            color:#327c83;
+            font-weight:500;
+            text-decoration:none;
+          ">
+            Read more <span class="fa-solid fa-arrow-right"></span>
+          </a>
         </div>
-        <div class="col-md-4">
-          <div class="card-box-c foo">
-            <div class="card-header-c d-flex">
-              <div class="card-box-ico"><span class="fas fa-building"></span></div>
-              <div class="card-title-c align-self-center">
-                <h2 class="title-c">Architecture</h2>
-              </div>
+
+        <!-- Card 2 -->
+        <div style="
+          flex:1 1 300px;
+          max-width:350px;
+          background:#fff;
+          border-radius:15px;
+          padding:25px;
+          box-shadow:0 8px 25px rgba(0,0,0,0.1);
+          transition:all 0.3s ease;
+        "
+        onmouseover="this.style.transform='translateY(-8px)'"
+        onmouseout="this.style.transform='translateY(0)'">
+
+          <div style="display:flex;align-items:center;margin-bottom:20px;">
+            <div style="
+              width:55px;height:55px;
+              background:#327c83;
+              color:#fff;
+              border-radius:50%;
+              display:flex;
+              align-items:center;
+              justify-content:center;
+              font-size:22px;
+              margin-right:15px;
+            ">
+              <span class="fas fa-building"></span>
             </div>
-            <div class="card-body-c">
-              <p class="content-c">Nulla porttitor accumsan tincidunt. Curabitur aliquet quam id dui posuere blandit. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.</p>
-            </div>
-            <div class="card-footer-c"><a href="{% url 'home' %}" class="link-c link-icon">Read more <span class="fa-solid fa-arrow-right"></span></a></div>
+            <h2 style="margin:0;font-size:22px;color:#2a6f75;">Architecture</h2>
           </div>
+
+          <p style="color:#555;font-size:15px;line-height:1.6;">
+            Nulla porttitor accumsan tincidunt. Curabitur aliquet quam id dui posuere blandit.
+          </p>
+
+          <a href="{% url 'contact' %}" style="
+            display:inline-block;
+            margin-top:15px;
+            color:#327c83;
+            font-weight:500;
+            text-decoration:none;
+          ">
+            Read more <span class="fa-solid fa-arrow-right"></span>
+          </a>
         </div>
-        <div class="col-md-4">
-          <div class="card-box-c foo">
-            <div class="card-header-c d-flex">
-              <div class="card-box-ico"><span class="fas fa-hand-holding-heart"></span></div>
-              <div class="card-title-c align-self-center">
-                <h2 class="title-c">Donate Trust</h2>
-              </div>
+
+        <!-- Card 3 -->
+        <div style="
+          flex:1 1 300px;
+          max-width:350px;
+          background:#fff;
+          border-radius:15px;
+          padding:25px;
+          box-shadow:0 8px 25px rgba(0,0,0,0.1);
+          transition:all 0.3s ease;
+        "
+        onmouseover="this.style.transform='translateY(-8px)'"
+        onmouseout="this.style.transform='translateY(0)'">
+
+          <div style="display:flex;align-items:center;margin-bottom:20px;">
+            <div style="
+              width:55px;height:55px;
+              background:#327c83;
+              color:#fff;
+              border-radius:50%;
+              display:flex;
+              align-items:center;
+              justify-content:center;
+              font-size:22px;
+              margin-right:15px;
+            ">
+              <span class="fas fa-hand-holding-heart"></span>
             </div>
-            <div class="card-body-c">
-              <p class="content-c">Sed porttitor lectus nibh. Cras ultricies ligula sed magna dictum porta. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi.</p>
-            </div>
-            <div class="card-footer-c"><a href="{% url 'home' %}" class="link-c link-icon">Read more <span class="fa-solid fa-arrow-right"></span></a></div>
+            <h2 style="margin:0;font-size:22px;color:#2a6f75;">Donate Trust</h2>
           </div>
+
+          <p style="color:#555;font-size:15px;line-height:1.6;">
+            Sed porttitor lectus nibh. Cras ultricies ligula sed magna dictum porta.
+          </p>
+
+          <a href="{% url 'contact' %}" style="
+            display:inline-block;
+            margin-top:15px;
+            color:#327c83;
+            font-weight:500;
+            text-decoration:none;
+          ">
+            Read more <span class="fa-solid fa-arrow-right"></span>
+          </a>
         </div>
+
       </div>
     </div>
   </section>
+
   <section class="section-property section-t8">
     <div class="container">
       <div class="row">
@@ -151,7 +249,7 @@
             <div class="title-box">
               <h2 class="title-a">Latest Properties</h2>
             </div>
-            <div class="title-link"><a href="{% url 'home' %}">All Property <span class="fa-solid fa-arrow-right"></span></a></div>
+            <div class="title-link"><a href="{% url 'properties' %}">All Property <span class="fa-solid fa-arrow-right"></span></a></div>
           </div>
         </div>
       </div>
@@ -211,7 +309,7 @@
             <div class="title-box">
               <h2 class="title-a">Interior Designs</h2>
             </div>
-            <div class="title-link"><a href="{% url "home" %}">Interior <span class="fa-solid fa-arrow-right"></span></a></div>
+            <div class="title-link"><a href="{% url "interior" %}">Interior <span class="fa-solid fa-arrow-right"></span></a></div>
           </div>
         </div>
       </div>
@@ -233,18 +331,18 @@
               <div class="card-body-d">
                 <p class="content-d color-text-a">{{ arch.description }}</p>
                 <div class="info-agents color-a">
-                  <p><strong>Phone:</strong> 9466703459</p>
-                  <p><strong>Email:</strong> gargy5703@gmail.com</p>
+                  <p><strong>Phone:</strong>  +91 87557 57375</p>
+                  <p><strong>Email:</strong> info.dreamhome99@gmail.com</p>
                 </div>
               </div>
               <div class="card-footer-d">
                 <div class="socials-footer d-flex justify-content-center">
                   <ul class="list-inline">
-                    <li class="list-inline-item"><a href="https://www.moviqs.com" class="link-one"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                    <li class="list-inline-item"><a href="https://www.moviqs.com" class="link-one"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                    <li class="list-inline-item"><a href="https://www.moviqs.com" class="link-one"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                    <li class="list-inline-item"><a href="https://www.moviqs.com" class="link-one"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>
-                    <li class="list-inline-item"><a href="https://www.moviqs.com" class="link-one"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
+                    <li class="list-inline-item"><a href="https://www.facebook.com/jawed.maliq.engineer" class="link-one"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                    <li class="list-inline-item"><a href="https://youtube.com/@art_and_build?si=Scd392_jBLrv_Db4" class="link-one"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
+                    <li class="list-inline-item"><a href="https://www.instagram.com/ar.jawed_interior.d?igsh=b2hraXN1emducmw0" class="link-one"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                    <li class="list-inline-item"><a href="https://www.linkedin.com/in/ar-jawed-maliq-198535348?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="link-one"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                    <li class="list-inline-item"><a href="https://wa.me/8755757375" class="link-one"><i class="fa fa-whatsapp" aria-hidden="true"></i></a></li>
                   </ul>
                 </div>
               </div>
@@ -263,7 +361,7 @@
             <div class="title-box">
               <h2 class="title-a">Exterior Designs</h2>
             </div>
-            <div class="title-link"><a href="{% url "home" %}">Exterior <span class="fa-solid fa-arrow-right"></span></a></div>
+            <div class="title-link"><a href="{% url "exterior" %}">Exterior <span class="fa-solid fa-arrow-right"></span></a></div>
           </div>
         </div>
       </div>
@@ -284,7 +382,7 @@
                       <a href="pages/blog-single.php">{{ exterior.description }}<br>new</a>
                     </h2>
                   </div>
-                  <div class="card-date"><span class="date-b">12-02-2025</span></div>
+                  {% comment %} <div class="card-date"><span class="date-b">12-02-2025</span></div> {% endcomment %}
                 </div>
               </div>
             </div>
@@ -310,7 +408,7 @@
           <div class="testimonials-box">
             <div class="row">
               <div class="col-sm-12 col-md-6">
-                <div class="testimonial-img"><img src="{{ clients.client_pic.url }}" alt="website template image" class="img-fluid"></div>
+                <div class="testimonial-img" ><img src="{{ clients.client_pic.url }}" alt="website template image" class="img-fluid"></div>
               </div>
               <div class="col-sm-12 col-md-6">
                 <div class="testimonial-ico"><span class="fa fa-quote-left"></span></div>

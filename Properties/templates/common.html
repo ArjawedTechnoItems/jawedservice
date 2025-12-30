@@ -15,9 +15,114 @@
     <link rel="stylesheet" href="https://themify.me/wp-content/themes/themify-v32/themify-icons/themify-icons.css"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="icon" type="image/png"sizes="48x48" href="https://i.postimg.cc/ZnsgcwyR/arlogo.png">
 
     {% block head %}
     {% endblock head %}
+    <style>
+
+        .login-btn {
+            margin-bottom: 18px;
+            display:flex !important;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 14px;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-top:20px;
+}
+
+.login-btn:hover {
+    background-color: #0056b3;
+    color: #fff;
+}
+
+
+        .sidebarOpen {
+  display: none;
+}
+
+@media (max-width: 768px) {
+
+  .sidebarOpen {
+    display: block;
+    font-size: 28px;
+    cursor: pointer;
+    color: white;
+  }
+
+  .menu {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 260px;
+    height: 100vh;
+    background: #327c83;
+    transition: 0.3s ease;
+    z-index: 1000;
+  }
+
+  .menu.active {
+    left: 0;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    padding-top: 80px;
+  }
+}
+
+
+.dropdown-menu {
+  display: none;
+  list-style: none;
+  padding-left: 20px;
+}
+
+.dropdown.open .dropdown-menu {
+  display: block;
+}
+
+.dropdown-toggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.tooltip-container {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    bottom: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #f3f4f6;
+    padding: 6px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: nowrap;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    z-index: 9999; /* ✅ REQUIRED */
+    transition: opacity 0.2s ease;
+}
+
+.tooltip-container:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+    </style>
 </head>
 <body>
     <nav>
@@ -25,51 +130,80 @@
             <i class='bx bx-menu sidebarOpen' ></i>
             <span class="logo navLogo">
                 <a href="{% url 'home' %}">
-                    <img src="{% static 'images/logo2.jpg' %}" alt="Logo" style="height: 60px;" />
+                    <img src="https://i.postimg.cc/ZnsgcwyR/arlogo.png" alt="Logo" style="height: 117px;" />
+                    {% comment %} <img src="{% static 'images/logo2.jpg' %}" alt="Logo" style="height: 60px;" /> {% endcomment %}
                 </a>
             </span>
-            {% comment %} <span class="logo navLogo "><a href="{% url 'home' %}">AR JAWED MALIQ </a></span> {% endcomment %}
 
             <div class="menu" style="margin-top:15px;">
                 <div class="logo-toggle">
                     <span class="logo"><a class="itemss" href="{% url 'home' %}">AR JAWED MALIQ </a></span>
-                    <i class='bx bx-x siderbarClose itemss'></i>
+                    <i class='bx bx-x sidebarClose itemss'style="font-size: xx-large;font-weight: bold;"></i>
                 </div>
 
                 <ul class="nav-links">
                     <li><a href="{% url 'home' %}" class="itemss">Home</a></li>
-                    <li><a href="{% url 'home' %}" class="itemss">Real Estate</a></li>
-                    <li class="dropdown">
-                    <a href="#" class="dropdown-toggle">Architecture</a>
+                    <li><a href="{% url 'service' %}" class="itemss">Service's</a></li>
+                    {% comment %} <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">Architecture</a>
                         <ul class="dropdown-menu itemss">
-                          <li><a href="{% url 'home' %}" class="itemss">Interior Design</a></li>
-                          <li><a href="{% url 'home' %}" class="itemss">Exterior Design</a></li>
+                          <li><a href="{% url 'properties' %}" class="itemss">Real Estate</a></li>
+                          <li><a href="{% url 'interior' %}" class="itemss">Interior Design</a></li>
+                          <li><a href="{% url 'exterior' %}" class="itemss">Exterior Design</a></li>
                         
                         </ul>
+                    </li> {% endcomment %}
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Architecture
+                            {% comment %} <i class="bx bx-chevron-down"></i> {% endcomment %}
+                        </a>
+
+                        <ul class="dropdown-menu itemss">
+                            <li><a href="{% url 'properties' %}" class="itemss">Real Estate</a></li>
+                            <li><a href="{% url 'interior' %}" class="itemss">Interior Design</a></li>
+                            <li><a href="{% url 'exterior' %}" class="itemss">Exterior Design</a></li>
+                        </ul>
                     </li>
-                    <li><a href="{% url 'home' %}" class="itemss">About</a></li>
-                    <li><a href="{% url 'home' %}" class="itemss">Contact</a></li>
+
+                    <li><a href="{% url 'about' %}" class="itemss">About</a></li>
+                    <li><a href="{% url 'contact' %}" class="itemss">Contact</a></li>
                 </ul>
-            </div>
-
-            <div class="darkLight-searchBox">
-                <div class="dark-light">
-                    <i class='bx bx-moon moon'></i>
-                    <i class='bx bx-sun sun'></i>
+            </div>  
+            <!-- Login & Register Buttons -->
+            {% if user.is_authenticated %}
+                <div class="nav-user">
+                    <a href="{% url 'view_profile' %}" title="Profile">
+                        <i class="fa-solid fa-user"></i>
+                    </a>
+                    <a href="{% url 'logout' %}" title="Logout" style="margin-inline: 10px;">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                    </a>
                 </div>
-
-                {% comment %} <div class="searchBox">
-                   <div class="searchToggle">
-                    <i class='bx bx-x cancel'></i>
-                    <i class='bx bx-search search'></i>
-                   </div>
-
-                    <div class="search-field">
-                        <input type="text" placeholder="Search...">
-                        <i class='bx bx-search'></i>
-                    </div>
-                </div> {% endcomment %}
+            {% else %}
+                <spam class="nav-user" style="display:flex">
+                    <a href="{% url 'login' %}" class="login-btn" title="Login">
+                        <i class="fa-solid fa-right-to-bracket"></i>
+                        <span> Login</span>
+                    </a>
+                    <a href="{% url 'register' %}" title="Register" style="margin-inline: 10px; margin-top: 29px;">
+                        <i class="fa-solid fa-user-plus"></i>
+                    </a>
+                </spam>
+            {% endif %}
+            {% comment %} <div>
+                <a href="{% url 'login' %}" style="color:white;">
+                    <i class="fa-solid fa-right-to-bracket"></i>
+                </a>
             </div>
+
+            <div style="margin-left:-100px">
+                <a href="{% url 'register' %}" style="color:white;">
+                    <i class="fa-solid fa-user-plus"></i>
+                </a>
+            </div> {% endcomment %}
+
+        
         </div>
     </nav>
     <div style="margin-top: 70px;">
@@ -87,9 +221,12 @@
                         <div class="f_widget company_widget wow fadeInLeft" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInLeft;">
                             <h3 class="f-title f_600 t_color f_size_18">Get in Touch</h3>
                             <p>Don’t miss any updates of our new templates and extensions.!</p>
-                            <form action="#" class="f_subscribe_two mailchimp" method="post" novalidate="true" _lpchecked="1">
+                            <form  class="f_subscribe_two mailchimp">
+                               
                                 <input type="text" name="EMAIL" class="form-control memail" placeholder="Email">
-                                <button class="btn btn_get btn_get_two" type="submit">Subscribe</button>
+                                <a href="{% url 'contact' %}">
+                                <button class="btn btn_get btn_get_two">Subscribe</button>
+                                </a>
                                 <p class="mchimp-errmessage" style="display: none;"></p>
                                 <p class="mchimp-sucmessage" style="display: none;"></p>
                             </form>
@@ -100,11 +237,12 @@
                             <h3 class="f-title f_600 t_color f_size_18">Pages</h3>
                             <ul class="list-unstyled f_list">
                                 <li><a href="{% url 'home' %}" style="text-decoration: none;">Home</a></li>
-                                <li><a href="{% url 'home' %}" style="text-decoration: none;">Properties</a></li>
-                                <li><a href="{% url 'home' %}" style="text-decoration: none;">Interior</a></li>
-                                <li><a href="{% url 'home' %}" style="text-decoration: none;">Exterior</a></li>
-                                <li><a href="{% url 'home' %}" style="text-decoration: none;">About</a></li>
-                                <li><a href="{% url 'home' %}" style="text-decoration: none;">Contact US</a></li>
+                                <li><a href="{% url 'service' %}" style="text-decoration: none;">Service</a></li>
+                                <li><a href="{% url 'properties' %}" style="text-decoration: none;">Properties</a></li>
+                                <li><a href="{% url 'interior' %}" style="text-decoration: none;">Interior</a></li>
+                                <li><a href="{% url 'exterior' %}" style="text-decoration: none;">Exterior</a></li>
+                                <li><a href="{% url 'about' %}" style="text-decoration: none;">About</a></li>
+                                <li><a href="{% url 'contact' %}" style="text-decoration: none;">Contact US</a></li>
                             </ul>
                         </div>
                     </div>
@@ -113,11 +251,13 @@
                             <h3 class="f-title f_600 t_color f_size_18">Help</h3>
                             <ul class="list-unstyled f_list">
                                 {% comment %} <li><a href="#" style="text-decoration: none;">FAQ</a></li> {% endcomment %}
-                                <li><a href="{% url 'home' %}" style="text-decoration: none;">Term &amp; conditions</a></li>
+                                <li><a href="{% url 'login' %}" style="text-decoration: none;">Service Provider Login</a></li>
+                                <li><a href="{% url 'register' %}" style="text-decoration: none;">Service Provider Register</a></li>
+                                <li><a href="{% url 'Termandconditions' %}" target="_blank" style="text-decoration: none;">Term &amp; conditions</a></li>
                                 {% comment %} <li><a href="#" style="text-decoration: none;">Reporting</a></li> {% endcomment %}
-                                <li><a href="{% url 'home' %}" style="text-decoration: none;">Documentation</a></li>
-                                <li><a href="{% url 'home' %}" style="text-decoration: none;">Support Policy</a></li>
-                                <li><a href="{% url 'home' %}" style="text-decoration: none;">Privacy</a></li>
+                                {% comment %} <li><a href="{% url 'Termandconditions' %}" style="text-decoration: none;">Documentation</a></li> {% endcomment %}
+                                <li><a href="{% url 'Documentation' %}"target="_blank"  style="text-decoration: none;">Support Policy</a></li>
+                                <li><a href="{% url 'Privacy' %}"target="_blank"  style="text-decoration: none;">Privacy</a></li>
                             </ul>
                         </div>
                     </div>
@@ -125,11 +265,11 @@
                         <div class="f_widget social-widget pl_70 wow fadeInLeft" data-wow-delay="0.8s" style="visibility: visible; animation-delay: 0.8s; animation-name: fadeInLeft;">
                             <h3 class="f-title f_600 t_color f_size_18">Social Links</h3>
                             <div class="f_social_icon">
-                                <a href="https://www.instagram.com/ar_maliq_consultant?utm_source=qr&igsh=MWdhM3V2d2x3Y2Fvcg==" style="text-decoration: none;" class="fab fa-instagram"></a>
-                                <a href="https://youtube.com/@arjawedmaliq?si=gRzh1uaJIgMeqzaU" style="text-decoration: none;" class="fab fa-youtube"></a>
-                                <a href="https://www.linkedin.com/in/ar-jawed-maliq-198535348?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" style="text-decoration: none;" class="fab fa-linkedin"></a>
-                                <a href="https://www.facebook.com/jawed.maliq.engineer" style="text-decoration: none;" class="fab fa-facebook"></a>
-                                <a href="https://wa.me/8755757375" style="text-decoration: none;" class="fab fa-whatsapp"></a>
+                                <a href="https://www.instagram.com/ar.jawed_interior.d?igsh=b2hraXN1emducmw0" target="_blank"  style="text-decoration: none;" class="fab fa-instagram"></a>
+                                <a href="https://youtube.com/@art_and_build?si=Scd392_jBLrv_Db4"target="_blank"  style="text-decoration: none;" class="fab fa-youtube"></a>
+                                <a href="https://www.linkedin.com/in/ar-jawed-maliq-198535348?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"target="_blank"  style="text-decoration: none;" class="fab fa-linkedin"></a>
+                                <a href="https://www.facebook.com/jawed.maliq.engineer"target="_blank"  style="text-decoration: none;" class="fab fa-facebook"></a>
+                                <a href="https://wa.me/8755757375" target="_blank" style="text-decoration: none;" class="fab fa-whatsapp"></a>
 
                             </div>
                         </div>
@@ -141,16 +281,79 @@
                 <div class="footer_bg_two"></div>
             </div>
         </div>
+        <div class="border-t-2 border-gray-500 py-4" style="padding-bottom:0px !important;">
+            <p class="text-center text-xs sm:text-sm md:text-base lg:text-lg text-gray-800">
+                <span class="tooltip-container">
+                    © 2025 All Rights Reserved. Website designed by Techno Items
+                    <span class="tooltip" style="font-size: small; font-weight: 500;">Contact: +91 7880080817 / 9466703459</span>
+                </span>
+            </p>
+        </div>
         {% comment %} <div class="footer_bottom">
             <div class="container">
                 
             </div>
         </div> {% endcomment %}
     </footer>
+    
+        <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+  const sidebarOpen = document.querySelector(".sidebarOpen");
+  const sidebarClose = document.querySelector(".sidebarClose");
+  const menu = document.querySelector(".menu");
+
+  // Open sidebar
+  sidebarOpen?.addEventListener("click", () => {
+    menu.classList.add("active");
+  });
+
+  // Close sidebar
+  sidebarClose?.addEventListener("click", () => {
+    menu.classList.remove("active");
+  });
+
+  // Dropdown toggle (Architecture)
+  document.querySelectorAll(".dropdown-toggle").forEach(toggle => {
+    toggle.addEventListener("click", function (e) {
+      e.preventDefault(); // stop page jump
+      this.parentElement.classList.toggle("open");
+    });
+  });
+
+  // Close sidebar ONLY when actual link is clicked
+  document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", function () {
+
+      // If this is dropdown toggle → don't close sidebar
+      if (this.classList.contains("dropdown-toggle")) return;
+
+      menu.classList.remove("active");
+    });
+  });
+
+});
+
+
+document.querySelectorAll('.tooltip-container').forEach(el => {
+    el.addEventListener('click', () => {
+        const tooltip = el.querySelector('.tooltip');
+        tooltip.style.visibility =
+            tooltip.style.visibility === 'visible' ? 'hidden' : 'visible';
+        tooltip.style.opacity =
+            tooltip.style.opacity === '1' ? '0' : '1';
+    });
+});
+
+
+
+</script>
+
+    
     {% block javascript %}
     <script src = "{% static "js/nav.js" %}"></script>
-    <script src = "{% static "js/home2.js" %}"></script>
-   
+    <script src = "{% static "js/home2.js" %}"></script>    
+    
     {% endblock javascript %}
 </body>
 </html>

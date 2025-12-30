@@ -63,7 +63,7 @@
 <section class="contact-form-section">
     <div class="form-container">
         <h2>Get in Touch</h2>
-        <form id="contact-form" method="POST" action="/contact/">
+        <form id="contact-form" method="POST" action="{% url 'contact' %}">
             {% csrf_token %}
             <div class="form-group">
                 <label for="name">Your Name<span class="required">*</span></label>

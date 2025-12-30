@@ -76,7 +76,7 @@ body {
 
 .detail-item i {
     font-size: 2rem;
-    color: #e74c3c;
+    color: #327c83;
     margin-right: 1rem;
     min-width: 40px;
 }
@@ -133,7 +133,7 @@ body {
     content: '';
     width: 50px;
     height: 3px;
-    background-color: #e74c3c;
+    background-color: #327c83;
     position: absolute;
     bottom: -10px;
     left: 50%;
@@ -151,7 +151,7 @@ body {
 }
 
 .required {
-    color: #e74c3c;
+    color: #327c83;
     margin-left: 2px;
 }
 
@@ -167,14 +167,14 @@ body {
 
 .form-group input:focus,
 .form-group textarea:focus {
-    border-color: #e74c3c;
+    border-color: #327c83;
     outline: none;
 }
 
 .btn {
     display: block;
     width: 100%;
-    background-color: #e74c3c;
+    background-color: #327c83;
     color: #fff;
     padding: 0.75rem;
     border: none;

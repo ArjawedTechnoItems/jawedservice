@@ -17,13 +17,21 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 from django.http import HttpResponse
+from django.conf import settings
+from Properties.views import home,about
+from django.conf.urls.static import static
+from django.shortcuts import render, redirect
 
 
-def home(request):
-    return HttpResponse("🎉 Django is running successfully on Render!")
+# def home(request):
+#     return redirect('home')
 
 urlpatterns = [
-    path('', home),
+    path('',home , name = "home"),
+    path('about/',about , name = "about"),
     path('Properties/',include('Properties.urls')),
+    path('accounts/', include('accounts.urls')),
     path('admin/', admin.site.urls),
 ]
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

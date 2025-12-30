@@ -1,0 +1,139 @@
+{% extends "common.html" %}
+{% load static %}
+
+{% block content %}
+<style>
+    body {
+        {% comment %} background: linear-gradient(135deg, #667eea, #764ba2); {% endcomment %}
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .login-container {
+        width: 100%;
+        min-height: 80vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .login-card {
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        margin-inline: 10px;
+        {% comment %} background: #ffffff; {% endcomment %}
+        width: 380px;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    }
+
+    .login-card h2 {
+        text-align: center;
+        margin-bottom: 25px;
+        color: #333;
+    }
+
+    .form-group {
+        margin-bottom: 18px;
+    }
+
+    .form-group label {
+        display: block;
+        font-size: 14px;
+        color: #000000ff;
+        margin-bottom: 6px;
+    }
+
+    .form-group input {
+        width: 100%;
+        padding: 10px 12px;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+        font-size: 14px;
+        outline: none;
+        transition: 0.3s;
+    }
+
+    .form-group input:focus {
+        border-color: #667eea;
+        box-shadow: 0 0 5px rgba(102,126,234,0.4);
+    }
+
+    {% comment %} .login-btn {
+        width: 100%;
+        padding: 12px;
+        border: none;
+        background: #667eea;
+        color: #fff;
+        font-size: 16px;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: 0.3s;
+    } {% endcomment %}
+        .login-btn {
+    width: 60%;
+    max-width: 220px;
+    min-width: 140px;
+    margin: 10px auto 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 12px;
+    background: #667eea;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 6px;
+}
+
+    .login-btn:hover {
+        background: #5a67d8;
+    }
+
+    .extra-links {
+        text-align: center;
+        margin-top: 15px;
+        font-size: 14px;
+    }
+
+    .extra-links a {
+        color: #dcdcdcff;
+        text-decoration: none;
+        font-weight: 500;
+    }
+
+    .extra-links a:hover {
+        text-decoration: underline;
+    }
+</style>
+
+<div class="login-container">
+    <div class="login-card">
+        <h2>Welcome Back 👋</h2>
+
+        <form method="post">
+            {% csrf_token %}
+
+            <div class="form-group">
+                <label>Email id</label>
+                <input type="email" name="email" placeholder="Enter email">
+            </div>
+
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" name="password" placeholder="Enter password" required>
+            </div>
+            <div>
+
+                <button type="submit" class="login-btn">Login</button>
+            </div>
+        </form>
+
+        <div class="extra-links">
+            <p>Don’t have an account?
+                <a href="{% url 'register' %}">Register</a>
+            </p>
+        </div>
+    </div>
+</div>
+{% endblock content %}
