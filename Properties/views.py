@@ -49,8 +49,8 @@ def contact(request):
         message = request.POST.get('message')
 
         subject = "New Service Inquiry – Contact Form Submission"
-        from_email = settings.DEFAULT_FROM_EMAIL
-        to_email = ['gargy5703@gmail.com', 'Ar.jawed.m@gmail.com']
+        from_email = settings.DEFAULT_FROM_EMAIL or settings.EMAIL_HOST_USER
+        to_email = ['gargy5703@gmail.com','Ar.jawed.m@gmail.com']
         html_content = f"""
             <!DOCTYPE html>
             <html>
@@ -121,7 +121,12 @@ def contact(request):
 
         # ✅ Attach HTML
         email_msg.attach_alternative(html_content, "text/html")
-        email_msg.send()
+        try:
+            email_msg.send()
+        except Exception as e:
+            print("Email error:", e)
+            messages.error(request, "Email service is temporarily unavailable.")
+            return redirect('contact')
 
         messages.success(request, "Your message has been sent successfully!")
         return redirect('contact')

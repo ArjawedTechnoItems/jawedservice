@@ -144,7 +144,7 @@ EMAIL_HOST_USER = 'ar.jawed.website@gmail.com'
 EMAIL_HOST_PASSWORD = 'pcpt fxdw qiuw buxo'
 
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
-
+EMAIL_TIMEOUT = 10
 CACHES = {
     'default': {
         'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
