@@ -86,6 +86,24 @@
     .register-box .login-link a:hover {
         text-decoration: underline;
     }
+    .password-wrapper {
+    position: relative;
+    margin-bottom: 18px;
+}
+
+.password-wrapper input {
+    padding-right: 40px;
+}
+
+.toggle-password {
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 18px;
+    user-select: none;
+}
 </style>
 
 <div class="register-container">
@@ -102,11 +120,16 @@
             <input type="email" name="email" placeholder="Enter your email" required>
 
             <label>Password</label>
-            <input type="password" name="password" placeholder="Create a password" required>
+            <div class="password-wrapper">
+                <input type="password" name="password" id="password" placeholder="Create a password" required>
+                <span class="toggle-password" onclick="togglePassword('password', this)">👁</span>
+            </div>
 
             <label>Confirm Password</label>
-            <input type="password" name="confirm" placeholder="Confirm password" required>
-
+            <div class="password-wrapper">
+                <input type="password" name="confirm" id="confirm" placeholder="Confirm password" required>
+                <span class="toggle-password" onclick="togglePassword('confirm', this)">👁</span>
+            </div>
             <button type="submit">Register</button>
         </form>
 
@@ -116,5 +139,17 @@
         </div>
     </div>
 </div>
+<script>
+    function togglePassword(fieldId, icon) {
+        const field = document.getElementById(fieldId);
+        if (field.type === "password") {
+            field.type = "text";
+            icon.textContent = "🙈";
+        } else {
+            field.type = "password";
+            icon.textContent = "👁";
+        }
+    }
+</script>
 
 {% endblock content %}
