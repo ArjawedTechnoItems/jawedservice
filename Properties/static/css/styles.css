@@ -49,7 +49,7 @@ nav{
     left: 0;
     height: 70px;
     width: 100%;
-    background-color: #327c83;
+    background-color: #1c222c;
     z-index: 100;
 }
 
@@ -63,7 +63,7 @@ nav .nav-bar{
     height: 100%;
     max-width: 1000px;
     width: 100%;
-    background-color: #327c83;
+    background-color: #1c222c;
     margin: 0 auto;
     padding: 0 30px;
     display: flex;
@@ -193,7 +193,7 @@ nav .nav-bar .logo a{
     width: 300px;
     display: flex;
     align-items: center;
-    background-color: #327c83;
+    background-color: #1c222c;
     padding: 3px;
     border-radius: 6px;
     box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
@@ -215,7 +215,7 @@ nav .nav-bar .logo a{
     top: -4px;
     height: 12px;
     width: 12px;
-    background-color: #327c83;
+    background-color: #1c222c;
     transform: rotate(-45deg);
     z-index: -1;
 }
@@ -239,7 +239,7 @@ body.dark .search-field input{
 
 .search-field i{
     position: absolute;
-    color: #327c83;
+    color: #1c222c;
     right: 15px;
     font-size: 22px;
     cursor: pointer;

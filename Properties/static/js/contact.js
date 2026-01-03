@@ -16,7 +16,7 @@
 
 //         // Simple Validation
 //         if (!name || !email || !message) {
-//             formResponse.style.color = '#327c83';
+//             formResponse.style.color = '#1c222c';
 //             formResponse.textContent = 'Please fill in all required fields.';
 //             return;
 //         }
@@ -24,7 +24,7 @@
 //         // Email Validation
 //         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 //         if (!emailRegex.test(email)) {
-//             formResponse.style.color = '#327c83';
+//             formResponse.style.color = '#1c222c';
 //             formResponse.textContent = 'Please enter a valid email address.';
 //             return;
 //         }

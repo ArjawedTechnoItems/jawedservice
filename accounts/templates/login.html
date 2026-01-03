@@ -17,7 +17,7 @@
     }
 
     .login-card {
-        background: linear-gradient(135deg, #667eea, #764ba2);
+        background-color: #1c222c;
         margin-inline: 10px;
         {% comment %} background: #ffffff; {% endcomment %}
         width: 380px;
@@ -29,7 +29,7 @@
     .login-card h2 {
         text-align: center;
         margin-bottom: 25px;
-        color: #333;
+        color: white;
     }
 
     .form-group {
@@ -39,7 +39,7 @@
     .form-group label {
         display: block;
         font-size: 14px;
-        color: #000000ff;
+        color: white;
         margin-bottom: 6px;
     }
 
@@ -58,7 +58,7 @@
         box-shadow: 0 0 5px rgba(102,126,234,0.4);
     }
 
-    {% comment %} .login-btn {
+    {% comment %} .login-btn2 {
         width: 100%;
         padding: 12px;
         border: none;
@@ -69,7 +69,7 @@
         cursor: pointer;
         transition: 0.3s;
     } {% endcomment %}
-        .login-btn {
+        .login-btn2 {
     width: 60%;
     max-width: 220px;
     min-width: 140px;
@@ -86,7 +86,7 @@
     border-radius: 6px;
 }
 
-    .login-btn:hover {
+    .login-btn2:hover {
         background: #5a67d8;
     }
 
@@ -145,12 +145,12 @@
             </div>
             <div>
 
-                <button type="submit" class="login-btn">Login</button>
+                <button type="submit" class="login-btn2">Login</button>
             </div>
         </form>
 
         <div class="extra-links">
-            <p>Don’t have an account?
+            <p style="color:white;">Don’t have an account?
                 <a href="{% url 'register' %}">Register</a>
             </p>
         </div>

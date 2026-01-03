@@ -11,7 +11,10 @@ class Profile(models.Model):
         MECHANIC = 'Mechanic', 'Mechanic'
         CLEANING = 'Cleaning', 'Cleaning'
         IT = 'IT Services', 'IT Services'
+        Tile = 'Tile', 'Tile'
+        Mistri = 'Mason/Mistri', 'Mason/Mistri'
         OTHER = 'Other', 'Other'
+         
         
     user = models.OneToOneField(User, on_delete=models.CASCADE)
 

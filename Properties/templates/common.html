@@ -61,7 +61,7 @@
     left: -100%;
     width: 260px;
     height: 100vh;
-    background: #327c83;
+    background: #1c222c;
     transition: 0.3s ease;
     z-index: 1000;
   }
@@ -130,16 +130,36 @@
             <i class='bx bx-menu sidebarOpen' ></i>
             <span class="logo navLogo">
                 <a href="{% url 'home' %}">
-                    <img src="https://i.postimg.cc/vm5Srv2X/Whats-App-Image-2025-12-31-at-11-12-02-AM-removebg-preview.png" alt="Logo" style="height: 117px;" />
+                    <img src="https://i.postimg.cc/1zHmTXDV/Whats-App-Image-2026-01-03-at-10-10-02-PM-removebg-preview.png" alt="Logo" style="margin-right: 42px; margin-top: 10px; height: 140px;" />
                     {% comment %} <img src="{% static 'images/logo2.jpg' %}" alt="Logo" style="height: 60px;" /> {% endcomment %}
                 </a>
             </span>
             
 
-            <div class="menu" style="margin-top:15px;">
+            <div class="menu">
                 <div class="logo-toggle">
-                    <span class="logo"><a class="itemss" href="{% url 'home' %}">AB Group Pvt. Ltd. </a></span>
-                    <i class='bx bx-x sidebarClose itemss'style="font-size: xx-large;font-weight: bold;"></i>
+                    <i class='bx bx-x sidebarClose itemss'style="font-size: xx-large;font-weight: bold; color:white;"></i>
+                    {% comment %} <span class="logo"><a class="itemss" href="{% url 'home' %}">AB Group Pvt. Ltd. </a></span> {% endcomment %}
+                    {% if user.is_authenticated %}
+                        <div class="nav-user">
+                            <a href="{% url 'view_profile' %}" title="Profile">
+                                <i class="fa-solid fa-user"></i>
+                            </a>
+                            <a href="{% url 'logout' %}" title="Logout" style="margin-inline: 10px;">
+                                <i class="fa-solid fa-right-from-bracket"></i>
+                            </a>
+                        </div>
+                    {% else %}
+                        <spam class="nav-user" style="display:flex">
+                            <a href="{% url 'login' %}" class="login-btn" title="Login">
+                                <i class="fa-solid fa-right-to-bracket"></i>
+                                <span> Login</span>
+                            </a>
+                            <a href="{% url 'register' %}" title="Register" style="margin-inline: 10px; margin-top: 29px;">
+                                <i class="fa-solid fa-user-plus" style="color: white;"></i>
+                            </a>
+                        </spam>
+                    {% endif %}
                 </div>
 
                 <ul class="nav-links">
@@ -172,26 +192,7 @@
                 </ul>
             </div>  
             <!-- Login & Register Buttons -->
-            {% if user.is_authenticated %}
-                <div class="nav-user">
-                    <a href="{% url 'view_profile' %}" title="Profile">
-                        <i class="fa-solid fa-user"></i>
-                    </a>
-                    <a href="{% url 'logout' %}" title="Logout" style="margin-inline: 10px;">
-                        <i class="fa-solid fa-right-from-bracket"></i>
-                    </a>
-                </div>
-            {% else %}
-                <spam class="nav-user" style="display:flex">
-                    <a href="{% url 'login' %}" class="login-btn" title="Login">
-                        <i class="fa-solid fa-right-to-bracket"></i>
-                        <span> Login</span>
-                    </a>
-                    <a href="{% url 'register' %}" title="Register" style="margin-inline: 10px; margin-top: 29px;">
-                        <i class="fa-solid fa-user-plus" style="color: white;"></i>
-                    </a>
-                </spam>
-            {% endif %}
+            
             {% comment %} <div>
                 <a href="{% url 'login' %}" style="color:white;">
                     <i class="fa-solid fa-right-to-bracket"></i>

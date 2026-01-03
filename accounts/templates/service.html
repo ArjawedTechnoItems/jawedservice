@@ -63,16 +63,21 @@ html, body {
   td::before {
     content: attr(data-label);
     font-weight: 600;
-    color: #327c83;
+    color: #1c222c;
     min-width: 80px;              /* 🔥 FIX */
     flex-shrink: 0;               /* 🔥 FIX */
   }
 
-  img {
+  .yogesh {
     width: 45px;
     height: 45px;
     flex-shrink: 0;
   }
+  {% comment %} img {
+    width: 45px;
+    height: 45px;
+    flex-shrink: 0;
+  } {% endcomment %}
 }
 
 
@@ -83,7 +88,7 @@ body {
 }
 
 .header {
-  background-color: #327c83;
+  background-color: #1c222c;
   color: white;
   font-size: 1.5em;
   padding: 1rem;
@@ -91,15 +96,21 @@ body {
   text-transform: uppercase;
 }
 
-img {
+.yogesh {
   border-radius: 50%;
   height: 70px;
   width: 70px;
   object-fit: cover;
 }
+{% comment %} img {
+  border-radius: 50%;
+  height: 70px;
+  width: 70px;
+  object-fit: cover;
+} {% endcomment %}
 
 .table-users {
-  border: 1px solid #327c83;
+  border: 1px solid #1c222c;
   border-radius: 10px;
   box-shadow: 3px 3px 0 rgba(0,0,0,0.1);
   max-width: calc(100% - 2em);
@@ -164,10 +175,10 @@ tr:nth-child(odd) {
     color: #6fb3b8;
   }
 
-  td:nth-child(2):before { content: "Name:"; }
-  td:nth-child(3):before { content: "Email:"; }
-  td:nth-child(4):before { content: "Phone:"; }
+  td:nth-child(3):before { content: "Name:"; }
+  td:nth-child(4):before { content: "Timeing:"; }
   td:nth-child(5):before { content: "Work:"; }
+  td:nth-child(6):before { content: "About:"; }
 }
 
 .filter-bar {
@@ -185,12 +196,12 @@ tr:nth-child(odd) {
 .filter-bar select {
   padding: 8px 12px;
   border-radius: 6px;
-  border: 1px solid #327c83;
+  border: 1px solid #1c222c;
   font-size: 14px;
 }
 
 .filter-bar button {
-  background: #327c83;
+  background: #1c222c;
   color: white;
   border: none;
   padding: 8px 18px;
@@ -210,7 +221,7 @@ tr:nth-child(odd) {
 
 .pagination a {
   text-decoration: none;
-  background: #327c83;
+  background: #1c222c;
   color: white;
   padding: 6px 14px;
   margin: 0 5px;
@@ -262,9 +273,9 @@ tr:nth-child(odd) {
          <td>{{ profile.service_id }}</td>
          <td>
             {% if profile.profile_pic %}
-              <img src="{{ profile.profile_pic.url }}">
+              <img src="{{ profile.profile_pic.url }}" class="yogesh">
             {% else %}
-              <img src="{% static 'images/default-user.png' %}">
+              <img src="{% static 'images/default-user.png' %}" class="yogesh">
             {% endif %}
          </td>
          <td>{{ profile.full_name }}</td>

@@ -17,8 +17,9 @@
     }
 
     .register-box {
+        background-color:#1c222c;
         margin: 20px 10px 20px 10px;
-        background: linear-gradient(120deg, #667eea, #764ba2);
+        {% comment %} background: linear-gradient(120deg, #667eea, #764ba2); {% endcomment %}
 
         padding: 20px 25px;
         width: 100%;
@@ -30,12 +31,12 @@
     .register-box h2 {
         text-align: center;
         margin-bottom: 25px;
-        color: #333;
+        color: white;
     }
 
     .register-box label {
         font-weight: 600;
-        color: #555;
+        color:white;
         display: block;
         margin-bottom: 6px;
     }
@@ -133,7 +134,7 @@
             <button type="submit">Register</button>
         </form>
 
-        <div class="login-link">
+        <div class="login-link" style="color:white;">
             Already have an account?
             <a href="{% url 'login' %}">Login</a>
         </div>
