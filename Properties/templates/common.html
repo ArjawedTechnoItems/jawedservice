@@ -121,6 +121,27 @@
     visibility: visible;
     opacity: 1;
 }
+/* Hide by default (desktop & tablet) */
+.menu-social-yogesh {
+    display: none;
+}
+
+/* Show only on mobile screens */
+@media (max-width: 768px) {
+    .menu-social-yogesh {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 20px;
+        padding-bottom: 15px;
+    }
+
+    .menu-social-yogesh a {
+        color: #1c222c;
+        font-size: 20px;
+    }
+}
+
 
     </style>
 </head>
@@ -130,7 +151,7 @@
             <i class='bx bx-menu sidebarOpen' ></i>
             <span class="logo navLogo">
                 <a href="{% url 'home' %}">
-                    <img src="https://i.postimg.cc/1zHmTXDV/Whats-App-Image-2026-01-03-at-10-10-02-PM-removebg-preview.png" alt="Logo" style="margin-right: 42px; margin-top: 10px; height: 140px;" />
+                    <img src="https://i.postimg.cc/NjJKX6wx/Whats-App-Image-2026-01-04-at-7-50-14-AM-removebg-preview.png" alt="Logo" style="margin-right: 42px; margin-top: 6px; height: 120px;" />
                     {% comment %} <img src="{% static 'images/logo2.jpg' %}" alt="Logo" style="height: 60px;" /> {% endcomment %}
                 </a>
             </span>
@@ -165,19 +186,9 @@
                 <ul class="nav-links">
                     <li><a href="{% url 'home' %}" class="itemss">Home</a></li>
                     <li><a href="{% url 'service' %}" class="itemss">Service's</a></li>
-                    {% comment %} <li class="dropdown">
-                        <a href="#" class="dropdown-toggle">Architecture</a>
-                        <ul class="dropdown-menu itemss">
-                          <li><a href="{% url 'properties' %}" class="itemss">Real Estate</a></li>
-                          <li><a href="{% url 'interior' %}" class="itemss">Interior Design</a></li>
-                          <li><a href="{% url 'exterior' %}" class="itemss">Exterior Design</a></li>
-                        
-                        </ul>
-                    </li> {% endcomment %}
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             Architecture
-                            {% comment %} <i class="bx bx-chevron-down"></i> {% endcomment %}
                         </a>
 
                         <ul class="dropdown-menu itemss">
@@ -190,22 +201,14 @@
                     <li><a href="{% url 'about' %}" class="itemss">About</a></li>
                     <li><a href="{% url 'contact' %}" class="itemss">Contact</a></li>
                 </ul>
-            </div>  
-            <!-- Login & Register Buttons -->
-            
-            {% comment %} <div>
-                <a href="{% url 'login' %}" style="color:white;">
-                    <i class="fa-solid fa-right-to-bracket"></i>
-                </a>
-            </div>
-
-            <div style="margin-left:-100px">
-                <a href="{% url 'register' %}" style="color:white;">
-                    <i class="fa-solid fa-user-plus"></i>
-                </a>
-            </div> {% endcomment %}
-
-        
+                <div class="f_social_icon menu-social-yogesh" style="margin-left: 12px;">
+                    <a href="https://www.instagram.com/ar.jawed_interior.d?igsh=b2hraXN1emducmw0" target="_blank" class="fab fa-instagram"></a>
+                    <a href="https://youtube.com/@art_and_build?si=Scd392_jBLrv_Db4" target="_blank" class="fab fa-youtube"></a>
+                    <a href="https://www.linkedin.com/in/ar-jawed-maliq-198535348" target="_blank" class="fab fa-linkedin"></a>
+                    <a href="https://www.facebook.com/jawed.maliq.engineer" target="_blank" class="fab fa-facebook"></a>
+                    {% comment %} <a href="https://wa.me/8755757375" target="_blank" class="fab fa-whatsapp"></a> {% endcomment %}
+                </div>
+            </div> 
         </div>
     </nav>
     <div style="margin-top: 70px;">

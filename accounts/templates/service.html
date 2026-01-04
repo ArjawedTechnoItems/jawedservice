@@ -283,7 +283,10 @@ tr:nth-child(odd) {
          <td><strong>{{ profile.service_category }}</strong></td>
          <td>
             <br>
-            {{ profile.work_description|truncatewords:15 }}
+            <div style="margin-top: -23px;">
+              {{ profile.work_description|truncatewords:15 }}
+            </div>
+            {% comment %} {{ profile.work_description }} {% endcomment %}
          </td>
       </tr>
       {% empty %}

@@ -114,8 +114,8 @@
         <form method="post">
             {% csrf_token %}
 
-            <label>Username</label>
-            <input type="text" name="username" placeholder="Choose a username" required>
+            <label>Full Name</label>
+            <input type="text" name="username" placeholder="Enter Full Name" required>
 
             <label>Email</label>
             <input type="email" name="email" placeholder="Enter your email" required>
@@ -145,7 +145,7 @@
         const field = document.getElementById(fieldId);
         if (field.type === "password") {
             field.type = "text";
-            icon.textContent = "🙈";
+            icon.textContent = "👁";
         } else {
             field.type = "password";
             icon.textContent = "👁";

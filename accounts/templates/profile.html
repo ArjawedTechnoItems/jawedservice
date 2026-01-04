@@ -179,9 +179,13 @@
                 <p>{{ profile.location }}</p>
             </div>
         </div>
-
+        <div style="display: flex;flex-direction: column;">
         <!-- Logout Button -->
-        <a href="{% url 'logout' %}" class="logout-btn">Logout</a>
+            <a href="{% url 'logout' %}" class="logout-btn">Logout</a>
+            
+            <a href="{% url 'edit_profile' %}" class="logout-btn" style="margin-top: 9px;">Edit Profile</a>
+            
+        </div>
 
     </div>
 
@@ -213,9 +217,9 @@
     </div>
 
     <!-- Actions -->
-    <div class="profile-actions">
+    {% comment %} <div class="profile-actions">
         <a href="{% url 'edit_profile' %}" class="edit-btn">Edit Profile</a>
-    </div>
+    </div> {% endcomment %}
 
 </div>
 
